@@ -790,8 +790,7 @@ function show2_0() {
 
                                            </div>--> 
 
-
-                                           <div class="col-md-12 thumb">
+<div class="col-md-12 thumb">
                                                
                                                  
                                                <!--<div id="app" class="thumbnail">
@@ -799,35 +798,31 @@ function show2_0() {
 
                                                </div>-->
                                              
-                                               <div class="container">
-                                                   <div id="instagram-feed-demo"></div>
-                                               </div>
+                                           <div id="container">
+                                               <div id="instagram-feed1" ></div>
+                                           </div>
 
-                                               <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-                                               <script src="https://www.jqueryscript.net/demo/Instagram-Photos-Without-API-instagramFeed/jquery.instagramFeed.js"></script>
+                                           <script>
+                                               (function ($) {
+                                                   $(window).on('load', function () {
+                                                       $.instagramFeed({
+                                                           'username': 'jicosolar',
+                                                           'container': "#instagram-feed1",
+                                                           'display_profile': true,
+                                                           'display_biography': true,
+                                                           'display_gallery': true,
+                                                           'callback': null,
+                                                           'styling': true,
+                                                           'items': 10,
+                                                           'items_per_row': 5,
+                                                           'margin': 0.3,
 
-                                               <script>
-                                                   (function ($) {
-                                                       $(window).on('load', function () {
-                                                           $.instagramFeed({
-                                                               'username': "jicosolar",
-                                                               'container': "#instagram-feed-demo",
-                                                               'display_profile': false,
-                                                               'display_biography': false,
-                                                               'display_gallery': true,
-                                                               'get_raw_json': false,
-                                                               'max_tries': 8,
-                                                               'callback': null,
-                                                               'styling': true,
-                                                               'items': 10,
-                                                               'items_per_row': 5,
-                                                               'margin': 0.3,
-                                                               'lazy_load': true,
-                                                               'on_error': console.error
-                                                           });
                                                        });
-                                                   })(jQuery);
-                                               </script>
+                                                   });
+                                               })(jQuery);
+                                           </script>
+
+
 
 
 
@@ -835,7 +830,7 @@ function show2_0() {
                                               
         </div>
                                            </div>
-                                       </div>
+                                </div>
                                </section>
                                <!--<script>
                                   
@@ -862,25 +857,7 @@ function show2_0() {
                            </script>
 
   <script src="jquery.instagramFeed.min.js"></script>
-<script>
-    (function($){
-        $(window).on('load', function () {
-         
-            $.instagramFeed({
-                'username': 'jicosolar',
-                'container': "instagram-feed2",
-                'display_profile': false,
-                'display_biography': false,
-                'display_gallery': true,
-                'callback': null,
-                'styling': false,
-                'items': 10,
-                'items_per_row': 4,
-                'margin': 1 
-            });
-        });
-    })(jQuery);
-</script>
+
                                <style>
                                    #app {
                                        display: grid;
@@ -1230,7 +1207,7 @@ function show2_0() {
 animateValue("value", 100, 25, 2000);
 </script>
     <script src="js/jquery.instagramFeed.min.js"></script>
-    <script>
+    <!--<script>
         (function($){
             $(window).on('load', function () {
               
@@ -1248,7 +1225,7 @@ animateValue("value", 100, 25, 2000);
             });
         });
     })(jQuery);
-    </script>
+    </script>-->
 
 
 
@@ -1362,7 +1339,7 @@ $(document).scroll(function() {
 
                                    var token = 'IGQVJVRHlUem9Nb2JnT3RsN0FPc0lQUnFKdDRwczFhSGVySS1WdTZA2aFVVeUd2dHdxVlBGWDBYTTVaX0RMZAVBwT0JGV1BLOGlPNmlUYlU0N2Q2VVJPUTk4VC1md0p4Y0JWWjZAqY1JKYml6OXdxcko2cgZDZD',
                                num_photos = 10, // maximum 20
-                               container = document.getElementById('instagram-feed2'), // it is our <ul id="rudr_instafeed">
+                               container = document.getElementById('instagram-feed1'), // it is our <ul id="rudr_instafeed">
                                scrElement = document.createElement('script');
 
                                    window.mishaProcessResult = function (data) {
@@ -1370,7 +1347,7 @@ $(document).scroll(function() {
                                            if (data.data[x].media_type == "IMAGE") {
 
                                           // container.innerHTML += '<img src="' + data.data[x].media_url + '" height="250" width="300">';
-                                               container.innerHTML += '<img src="' + data.data[x].media_url + '" height="200" width="400">';
+                                               container.innerHTML += '<img src="' + data.data[x].media_url + '" height="200" width="200" style="margin-right:10px;margin-left:10px;margin-top:10px;margin-bottom:10px">';
                                            }
                                           
                                        }
