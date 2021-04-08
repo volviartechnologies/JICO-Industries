@@ -143,14 +143,14 @@ function show2_0() {
         $(window).on('load', function(){
             $.instagramFeed({
                 'username': 'jicosolar',
-                'container': "#instagram-feed1",
+                'container': "#instagram-feed2",
                'display_profile': false,
                 'display_biography': false,
                 'display_gallery': true,
                 'callback': null,
                 'styling': true,
-                'items': 8,
-                'items_per_row': 4,
+                'items': 12,
+                'items_per_row': 6,
                 'margin': 1 
             });
         });
@@ -776,7 +776,7 @@ function show2_0() {
                                        <div align="center" class="custom-module"><h2>Media Gallery</h2></div>
                                        <div class="row">
                                            
-                                       <!-- <div class="col-md-4 thumb">
+                                        <!--<div class="col-md-4 thumb">
                                                <div class="bos">
                                                    <video width="450" height="560" controls class="img-responsive">
 
@@ -788,7 +788,7 @@ function show2_0() {
 
                                                </div>
 
-                                           </div> -->
+                                           </div>--> 
 
 
                                            <div class="col-md-12 thumb">
@@ -836,13 +836,13 @@ function show2_0() {
         $(window).on('load', function(){
             $.instagramFeed({
                 'username': 'jicosolar',
-                'container': "instagram-feed2",
+                'container': "#instagram-feed2",
                 'display_profile': false,
                 'display_biography': false,
                 'display_gallery': true,
                 'callback': null,
                 'styling': false,
-                'items': 8,
+                'items': 12,
                 'items_per_row': 6,
                 'margin': 1 
             });
@@ -1203,7 +1203,7 @@ animateValue("value", 100, 25, 2000);
             $(window).on('load', function(){
             $.instagramFeed({
                 'username': 'jicosolar',
-                'container': "#instagram-feed1",
+                'container': "#instagram-feed2",
                 'display_profile': false,
                 'display_biography': false,
                 'display_gallery': true,
@@ -1328,19 +1328,22 @@ $(document).scroll(function() {
 
 
                                    var token = 'IGQVJVRHlUem9Nb2JnT3RsN0FPc0lQUnFKdDRwczFhSGVySS1WdTZA2aFVVeUd2dHdxVlBGWDBYTTVaX0RMZAVBwT0JGV1BLOGlPNmlUYlU0N2Q2VVJPUTk4VC1md0p4Y0JWWjZAqY1JKYml6OXdxcko2cgZDZD',
-                               num_photos = 8, // maximum 20
+                               num_photos = 12, // maximum 20
                                container = document.getElementById('instagram-feed2'), // it is our <ul id="rudr_instafeed">
                                scrElement = document.createElement('script');
 
                                    window.mishaProcessResult = function (data) {
                                        for (x in data.data) {
-                                          
+                                           if (data.data[x].media_type == "IMAGE") {
+
                                           // container.innerHTML += '<img src="' + data.data[x].media_url + '" height="250" width="300">';
-                                           container.innerHTML += '<img src="' + data.data[x].media_url + '" height="200" width="300">';
+                                               container.innerHTML += '<img src="' + data.data[x].media_url + '" height="200" width="300">';
+                                           }
+                                          
                                        }
                                    }
 
-                                   scrElement.setAttribute('src', 'https://graph.instagram.com/me/media?access_token=' + token + '&fields=media_url&limit=' + num_photos + '&callback=mishaProcessResult');
+                                   scrElement.setAttribute('src', 'https://graph.instagram.com/me/media?access_token=' + token + '&fields=media_url,media_type&limit=' + num_photos + '&callback=mishaProcessResult');
                                    document.body.appendChild(scrElement);
                                                   });
                                </script>
