@@ -2950,6 +2950,7 @@ div.absolute{left: -10px!important;}
 .mnu_br{top: 34px;}
 .service_item{margin-bottom: 70px;}
 .fix_logos{width:198px;}
+.abt_hei {margin-top: 38px;}
 
 }
 @media (max-width:640px) {
@@ -2986,4 +2987,8 @@ div.absolute{left: -10px!important;}
 }
 @media (max-width:340px) {
 .fix_logos{width: 86px;}
+}
+
+@media (max-width:320px) {
+.mr_top23{margin-top: -19px!important;}
 }
